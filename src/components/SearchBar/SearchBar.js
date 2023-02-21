@@ -10,11 +10,12 @@ const SearchBar = ({ handleSubmit, setQuery, query }) => {
         type="text"
         id="search"
         placeholder="Search"
+        value={query}
         onChange={(e) => {
           setQuery(e.target.value);
         }}
       />
-      {query && <XMarkIcon className="xIcon" />}
+      {query && <XMarkIcon className="xIcon" onClick={() => setQuery(null)} />}
     </form>
   );
 };

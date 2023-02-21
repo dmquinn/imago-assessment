@@ -62,8 +62,7 @@ const SingleMediaPage = () => {
               <p>Basic</p>
             </div>
             <p>
-              {image.usagelicences[0].credits}{" "}
-              {image.usagelicences[0].credits > 1 ? "credits" : "credit"}
+              {image.usagelicences[0].price} {image.usagelicences[0].currency}
             </p>
           </div>
           <div className="priceRow">
@@ -72,8 +71,7 @@ const SingleMediaPage = () => {
               <p>Full</p>
             </div>
             <p>
-              {image.usagelicences[1].credits}{" "}
-              {image.usagelicences[1].credits > 1 ? "credits" : "credit"}
+              {image.usagelicences[1].price} {image.usagelicences[0].currency}
             </p>
           </div>
         </div>
