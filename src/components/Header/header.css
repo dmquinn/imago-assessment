@@ -2,8 +2,9 @@
   height: 50px;
 }
 .nav {
-  width: 100%;
   position: relative;
+  border-bottom: 1px solid #eae7e2;
+  padding: 20px;
 }
 
 .nav > .nav-header {

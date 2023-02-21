@@ -25,10 +25,13 @@ const SearchPage = () => {
     handleFetchData(query);
   };
 
-  images && console.log(images);
   return (
     <div className="app">
-      <SearchBar handleSubmit={handleSubmit} setQuery={setQuery} />
+      <SearchBar
+        handleSubmit={handleSubmit}
+        setQuery={setQuery}
+        query={query}
+      />
       <Gallery images={images} />
     </div>
   );

@@ -1,7 +1,9 @@
 import React from "react";
+import { XMarkIcon } from "@heroicons/react/24/solid";
+
 import "./searchBar.css";
 
-const SearchBar = ({ handleSubmit, setQuery }) => {
+const SearchBar = ({ handleSubmit, setQuery, query }) => {
   return (
     <form className="searchBarContainer" onSubmit={(e) => handleSubmit(e)}>
       <input
@@ -12,6 +14,7 @@ const SearchBar = ({ handleSubmit, setQuery }) => {
           setQuery(e.target.value);
         }}
       />
+      {query && <XMarkIcon className="xIcon" />}
     </form>
   );
 };

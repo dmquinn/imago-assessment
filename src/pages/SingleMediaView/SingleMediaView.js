@@ -31,20 +31,30 @@ const SingleMediaPage = () => {
   let year = objectDate.getFullYear();
 
   if (!image) return <p>Loading...</p>;
+
   return (
     <div className="container">
       <div className="colLeft">
         <h5>
           <b>{image.caption}</b>
         </h5>
-        <img src={image.mediasrc} alt="" />
+        <img src={image.mediasrc} alt={image.title} className="singleImage" />
       </div>
+
       <div className="colRight">
         <div className="priceContainer">
           <p>
-            Premium RF: <small>from</small>
-            {image.usagelicences[0].price}
-            {image.usagelicences[0].currency}
+            Premium RF: <small>from </small>
+            {image.usagelicences[0].credits}{" "}
+            {image.usagelicences[0].credits > 1 ? "credits" : "credit"}
+          </p>
+          <p>
+            Basic: {image.usagelicences[0].credits}{" "}
+            {image.usagelicences[0].credits > 1 ? "credits" : "credit"}
+          </p>
+          <p>
+            Full: {image.usagelicences[1].credits}{" "}
+            {image.usagelicences[1].credits > 1 ? "credits" : "credit"}
           </p>
         </div>
         <p>Credit: {image.creator}</p>
