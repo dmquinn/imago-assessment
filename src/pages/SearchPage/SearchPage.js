@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Gallery from "../components/Gallery/Gallery";
-import Header from "../components/Header/Header";
-import SearchBar from "../components/SearchBar/SearchBar";
-import { config } from "../config";
+import Gallery from "../../components/Gallery/Gallery";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import { config } from "../../config";
 
 const SearchPage = () => {
   const [images, setImages] = useState([]);
@@ -29,8 +28,6 @@ const SearchPage = () => {
   images && console.log(images);
   return (
     <div className="app">
-      <Header />
-
       <SearchBar handleSubmit={handleSubmit} setQuery={setQuery} />
       <Gallery images={images} />
     </div>

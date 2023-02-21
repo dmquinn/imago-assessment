@@ -1,0 +1,21 @@
+.container {
+  padding: 20px;
+  display: flex;
+}
+
+.colLeft {
+  width: 60%;
+  padding: 20px;
+}
+.colRight {
+  width: 40%;
+  padding: 20px;
+}
+.priceContainer {
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
