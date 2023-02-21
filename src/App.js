@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import SingleImage from "./pages/SingleImage";
+import SearchPage from "./pages/SearchPage";
+import SingleMediaView from "./pages/SingleMediaView";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" component={Homepage} />
-        <Route path="/:id" component={SingleImage} />
+        <Route path="/" element={<SearchPage />} />
+        <Route path="/images/:id" element={<SingleMediaView />} />
       </Routes>
     </Router>
   );

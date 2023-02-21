@@ -2,32 +2,32 @@ import React, { useEffect, useState } from "react";
 import Gallery from "../components/Gallery/Gallery";
 import Header from "../components/Header/Header";
 import SearchBar from "../components/SearchBar/SearchBar";
-import data from "../data.json";
+import { config } from "../config";
 
-function Homepage() {
+const SearchPage = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    console.log(data);
     handleFetchData();
   }, []);
 
   const handleFetchData = async () => {
     try {
-      const resp = await fetch("");
+      const resp = await fetch(`${config.apiUrl}/search?query=`);
       const data = await resp.json();
-      if (data) setImages(data);
+      if (data) setImages(data.media);
     } catch (err) {
       console.log(err); //popup
     }
   };
+  images && console.log(images);
   return (
     <div className="app">
       <Header />
       <SearchBar />
-      <Gallery />
+      <Gallery images={images} />
     </div>
   );
-}
+};
 
-export default Homepage;
+export default SearchPage;
