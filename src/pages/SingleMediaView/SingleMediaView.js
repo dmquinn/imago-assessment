@@ -42,29 +42,55 @@ const SingleMediaPage = () => {
       </div>
 
       <div className="colRight">
+        <div className="center">
+          <h2>Choose Your License </h2>
+        </div>
         <div className="priceContainer">
+          <div className="priceRow">
+            <div>
+              <p>Premium RF:</p>
+            </div>
+            <div>
+              <span className="muted">from </span>{" "}
+              {image.usagelicences[0].credits}{" "}
+              {image.usagelicences[0].credits > 1 ? "credits" : "credit"}
+            </div>
+          </div>
+          <div className="priceRow">
+            <div className="priceRow">
+              <input type="checkBox" />
+              <p>Basic</p>
+            </div>
+            <p>
+              {image.usagelicences[0].credits}{" "}
+              {image.usagelicences[0].credits > 1 ? "credits" : "credit"}
+            </p>
+          </div>
+          <div className="priceRow">
+            <div className="priceRow">
+              <input type="checkBox" />
+              <p>Full</p>
+            </div>
+            <p>
+              {image.usagelicences[1].credits}{" "}
+              {image.usagelicences[1].credits > 1 ? "credits" : "credit"}
+            </p>
+          </div>
+        </div>
+        <div className="purchaseButtons">
+          <button>Add to Basket</button>
+          <button className="highlight">Buy Now</button>
+        </div>
+        <div className="imgDetails">
+          <p>Credit: {image.creator}</p>
+          <p>Image Id: {image.mediaid}</p>
           <p>
-            Premium RF: <small>from </small>
-            {image.usagelicences[0].credits}{" "}
-            {image.usagelicences[0].credits > 1 ? "credits" : "credit"}
+            Max Size: {image.width} x {image.height}
           </p>
           <p>
-            Basic: {image.usagelicences[0].credits}{" "}
-            {image.usagelicences[0].credits > 1 ? "credits" : "credit"}
-          </p>
-          <p>
-            Full: {image.usagelicences[1].credits}{" "}
-            {image.usagelicences[1].credits > 1 ? "credits" : "credit"}
+            Date: {day}.{month + 1}.{year}
           </p>
         </div>
-        <p>Credit: {image.creator}</p>
-        <p>Image Id: {image.mediaid}</p>
-        <p>
-          Max Size: {image.width} x {image.height}
-        </p>
-        <p>
-          Date: {day}.{month + 1}.{year}
-        </p>
       </div>
     </div>
   );
