@@ -9,7 +9,7 @@ const Gallery = ({ images }) => {
     <div className="imageRow">
       {images?.map((img) => {
         return (
-          <Link to={`/images/${img["media-id"]}`}>
+          <Link to={`/images/${img["media-id"]}`} key={img["media-id"]}>
             <img
               src={`${config.imgSrcUrl}/${img.preview}`}
               key={img["media-id"]}

@@ -21,8 +21,14 @@ const SingleMediaPage = () => {
       console.log(err);
     }
   };
+  image && console.log(image);
   if (!image) return <p>Loading...</p>;
-  return <div>{image.caption}</div>;
+  return (
+    <>
+      <img src={image.mediasrc} alt="" />
+      {image.caption}
+    </>
+  );
 };
 
 export default SingleMediaPage;

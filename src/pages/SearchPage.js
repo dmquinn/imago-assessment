@@ -6,25 +6,32 @@ import { config } from "../config";
 
 const SearchPage = () => {
   const [images, setImages] = useState([]);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    handleFetchData();
+    handleFetchData("");
   }, []);
 
-  const handleFetchData = async () => {
+  const handleFetchData = async (query) => {
     try {
-      const resp = await fetch(`${config.apiUrl}/search?query=`);
+      const resp = await fetch(`${config.apiUrl}/search?query="${query}"`);
       const data = await resp.json();
       if (data) setImages(data.media);
     } catch (err) {
-      console.log(err); //popup
+      console.log(err);
     }
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleFetchData(query);
+  };
+
   images && console.log(images);
   return (
     <div className="app">
       <Header />
-      <SearchBar />
+
+      <SearchBar handleSubmit={handleSubmit} setQuery={setQuery} />
       <Gallery images={images} />
     </div>
   );

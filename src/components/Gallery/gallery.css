@@ -2,6 +2,8 @@ img {
   height: 300px;
   width: auto;
   margin: 5px;
+  display: flex;
+  flex-grow: 1;
 }
 
 .imageRow {

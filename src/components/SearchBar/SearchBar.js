@@ -1,11 +1,18 @@
 import React from "react";
 import "./searchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ handleSubmit, setQuery }) => {
   return (
-    <div className="searchBarContainer">
-      <input type="text" id="search" placeholder="Search" />
-    </div>
+    <form className="searchBarContainer" onSubmit={(e) => handleSubmit(e)}>
+      <input
+        type="text"
+        id="search"
+        placeholder="Search"
+        onChange={(e) => {
+          setQuery(e.target.value);
+        }}
+      />
+    </form>
   );
 };
 

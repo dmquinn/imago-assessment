@@ -3,23 +3,17 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <div class="nav">
+    <div className="nav">
       <input type="checkbox" id="nav-check" />
-      <div class="nav-header">
+      <div className="nav-header">
         <img
-          class="logo"
+          className="logo"
           src="https://cdn.imago-images.com/Images/Logo/IMAGO-Primary_Logos-RGB-BLACK.svg"
         />
       </div>
-      <div class="nav-btn">
-        <label for="nav-check">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-      </div>
+      <div className="nav-btn"></div>
 
-      <div class="nav-links">
+      <div className="nav-links">
         <a href="//github.io/jo_geek" target="_blank">
           Editorial
         </a>
