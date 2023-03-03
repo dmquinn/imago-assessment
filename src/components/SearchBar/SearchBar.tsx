@@ -1,9 +1,14 @@
-import React from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-
+import React, { useState, Dispatch, SetStateAction } from "react";
 import "./searchBar.css";
 
-const SearchBar = ({ handleSubmit, setQuery, query }) => {
+interface Props {
+  handleSubmit: Dispatch<SetStateAction<any>>;
+  setQuery: Dispatch<SetStateAction<any>>;
+  query: string;
+}
+
+const SearchBar: React.FC<Props> = ({ handleSubmit, setQuery, query }) => {
   return (
     <form className="searchBarContainer" onSubmit={(e) => handleSubmit(e)}>
       <input

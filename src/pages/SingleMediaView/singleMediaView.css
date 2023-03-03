@@ -58,8 +58,17 @@
 .imgDetails {
   font-family: "Syne Mono", monospace;
 }
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
+  }
+  .colRight,
+  .colLeft {
+    width: 100%;
   }
 }

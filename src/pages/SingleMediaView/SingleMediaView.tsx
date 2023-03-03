@@ -1,11 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { config } from "../../config";
+import { ImageType } from "../../types";
 import "./singleMediaView.css";
 
-const SingleMediaPage = () => {
+const SingleMediaPage: React.FC = () => {
   const params = useParams();
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<ImageType>({
+    title: "",
+    mediasrc: "",
+    caption: "",
+    creator: "",
+    mediaid: "",
+    width: "",
+    height: "",
+    usagelicences: [{ credits: 0, price: 0, currency: "" }],
+    creationdate: "",
+  });
 
   useEffect(() => {
     if (params.id) {
@@ -13,7 +24,7 @@ const SingleMediaPage = () => {
     }
   }, [params.id]);
 
-  const handleGetImageInfo = async (id) => {
+  const handleGetImageInfo = async (id: any) => {
     try {
       const resp = await fetch(`${config.apiUrl}/media/${id}`);
       const data = await resp.json();

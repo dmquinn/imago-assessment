@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Gallery from "../../components/Gallery/Gallery";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { config } from "../../config";
@@ -11,7 +11,7 @@ const SearchPage = () => {
     handleFetchData("");
   }, []);
 
-  const handleFetchData = async (query) => {
+  const handleFetchData = async (query: string) => {
     try {
       const resp = await fetch(`${config.apiUrl}/search?query="${query}"`);
       const data = await resp.json();
@@ -20,7 +20,7 @@ const SearchPage = () => {
       console.log(err);
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     handleFetchData(query);
   };
